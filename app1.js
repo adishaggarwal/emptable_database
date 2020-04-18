@@ -205,6 +205,7 @@ class actions {
                          });
                      }*/
                     {
+                        console.log("ebkj0");
                         fetch(`http://localhost:3000/updateuser/${fid}`, {
                             method: "put",
                             headers: { 'Content-Type': 'application/json' },
