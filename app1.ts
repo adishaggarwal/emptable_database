@@ -195,6 +195,7 @@ editrow(val:any)
            {
             let newemp= new imp.emp(recordarr[0],recordarr[1],recordarr[2],recordarr[3],recordarr[4],recordarr[5],recordarr[6],recordarr[7]);
            let alerts= document.getElementsByClassName("alertspan")!;
+           console.log(newemp);
            for(let i=0;i<alerts.length;i++)
            {
                alerts[i].style.display="none";

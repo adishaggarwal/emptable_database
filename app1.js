@@ -150,6 +150,7 @@ class actions {
                 if (validate.phone(`${recordarr[4]}`) && validate.email(`${recordarr[3]}`) && validate.notempty(`${recordarr[0]}`) && validate.notempty(`${recordarr[2]}`) && validate.address(`${recordarr[5]}`)) {
                     let newemp = new imp.emp(recordarr[0], recordarr[1], recordarr[2], recordarr[3], recordarr[4], recordarr[5], recordarr[6], recordarr[7]);
                     let alerts = document.getElementsByClassName("alertspan");
+                    console.log(newemp);
                     for (let i = 0; i < alerts.length; i++) {
                         alerts[i].style.display = "none";
                     }
