@@ -211,6 +211,7 @@ class actions {
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(newemp)
                         }).then(res => {
+                            console.log("ebkj0");
                             let kalesh1 = document.getElementById("tbody").getElementsByTagName("button");
                             for (let i = 1; i < kalesh1.length; i = i + 2) {
                                 let num2 = kalesh1[i].id;
