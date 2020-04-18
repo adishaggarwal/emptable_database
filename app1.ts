@@ -152,13 +152,14 @@ editrow(val:any)
                     let x:any;
                     x = xs6[0].value;
                     recordarr[q6]=x;
+                    console.log(recordarr[q6]);
                 }
                 else if(q6==7)
                 {
                     let x:any;
                     x = xs6[1].value;
                     recordarr[q6]=x;
-                    console.log(recordarr[q6]);
+                    
                 }
                 else
                 {
