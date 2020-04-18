@@ -142,7 +142,7 @@ editrow(val:any)
             var xx6= document.getElementById(b6)!.getElementsByTagName("input")!;
             var xe6= document.getElementById(b6)!.getElementsByTagName("td")!;
             var xs6= document.getElementById(b6)!.getElementsByTagName("select")!;
-            console.log(xs6[0].value);
+            console.log(xs6[2].value);
             console.log(xs6[1].value);
             
             var q6;
