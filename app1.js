@@ -113,21 +113,17 @@ class actions {
                 var xe6 = document.getElementById(b6).getElementsByTagName("td");
                 var xs61 = document.getElementById("selectroles" + fid);
                 var xs62 = document.getElementById("selectwebsites" + fid);
-                console.log(xs61);
-                console.log(xs62);
-                console.log(xs61[0].value);
-                console.log(xs62[0].value);
                 var q6;
                 for (q6 = 0; q6 < xe6.length - 2; q6++) {
                     var index = xx6[q6];
                     if (q6 == 6) {
                         let x;
-                        x = xs6[0].value;
+                        x = xs62[0].value;
                         recordarr[q6] = x;
                     }
                     else if (q6 == 7) {
                         let x;
-                        x = xs6[1].value;
+                        x = xs61[0].value;
                         recordarr[q6] = x;
                     }
                     else {

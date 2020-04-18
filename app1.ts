@@ -144,10 +144,6 @@ editrow(val:any)
             var xs61= document.getElementById("selectroles"+fid)!;
             var xs62= document.getElementById("selectwebsites"+fid)!;
 
-            console.log(xs61);
-            console.log(xs62);
-            console.log(xs61[0].value);
-            console.log(xs62[0].value);
             
             var q6;
             for (q6 = 0; q6 < xe6.length-2; q6++) 
@@ -156,13 +152,13 @@ editrow(val:any)
                 if(q6==6)
                 {
                     let x:any;
-                    x = xs6[0].value;
+                    x = xs62[0].value;
                     recordarr[q6]=x;
                 }
                 else if(q6==7)
                 {
                     let x:any;
-                    x = xs6[1].value;
+                    x = xs61[0].value;
                     recordarr[q6]=x;
                     
                 }
