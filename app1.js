@@ -114,6 +114,7 @@ class actions {
                 var xs6 = document.getElementById(b6).getElementsByTagName("select");
                 console.log(xs6[2].value);
                 console.log(xs6[1].value);
+                console.log(xs6.length);
                 var q6;
                 for (q6 = 0; q6 < xe6.length - 2; q6++) {
                     var index = xx6[q6];
