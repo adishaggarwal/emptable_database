@@ -366,7 +366,8 @@ editrow(val:any)
                                                                             let opt=data[i];
                                                                             let optelement=document.createElement("option");
                                                                             optelement.textContent=opt.role_name;
-                                                                            optelement.value=opt.role_key.toString();
+                                                                            let str=""+opt.role_key;
+                                                                            optelement.value=str;
                                                                             select!.appendChild(optelement);
                                                                         }
                                                                     });
