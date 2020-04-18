@@ -111,7 +111,7 @@ class actions {
                 let b6 = "row" + fid;
                 var xx6 = document.getElementById(b6).getElementsByTagName("input");
                 var xe6 = document.getElementById(b6).getElementsByTagName("td");
-                var xs61 = document.getElementById("selectrows" + fid);
+                var xs61 = document.getElementById("selectroles" + fid);
                 var xs62 = document.getElementById("selectwebsites" + fid);
                 console.log(xs61);
                 console.log(xs62);

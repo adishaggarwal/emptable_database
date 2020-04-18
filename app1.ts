@@ -141,7 +141,7 @@ editrow(val:any)
     
             var xx6= document.getElementById(b6)!.getElementsByTagName("input")!;
             var xe6= document.getElementById(b6)!.getElementsByTagName("td")!;
-            var xs61= document.getElementById("selectrows"+fid)!;
+            var xs61= document.getElementById("selectroles"+fid)!;
             var xs62= document.getElementById("selectwebsites"+fid)!;
 
             console.log(xs61);
