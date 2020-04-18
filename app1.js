@@ -119,7 +119,7 @@ class actions {
                         let x;
                         x = xs6[0].value;
                         recordarr[q6] = x;
-                        console.log(recordarr[q6]);
+                        console.log(xs6[0].value);
                     }
                     else if (q6 == 7) {
                         let x;
