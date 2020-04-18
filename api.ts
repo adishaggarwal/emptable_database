@@ -37,8 +37,8 @@ app.put('updateuser/:id', function(req,res){
     console.log("hello");
     let value=req.body;
     let id=req.params.id;
-    client.query(`update users set firstname=$1,middlename=$2,lastname=$3,email=$4,phoneno=$5,address=$6,role=$7,customer_id=$8
-  where empid=${id};`,[value.firstname,value.middlename,value.lastname,value.email,value.phoneno,value.address,value.role_name,value.customer_id])
+    client.query(`update users set firstname=$1,middlename=$2,lastname=$3,email=$4,phoneno=$5,address=$6,customer_id=$7,role=$8
+  where empid=${id};`,[value.firstname,value.middlename,value.lastname,value.email,value.phoneno,value.address,value.customer_id,value.role_name])
   res.send();
   
 });
