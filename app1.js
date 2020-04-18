@@ -46,8 +46,6 @@ class actions {
             };
         }
     }
-    editrow(val) {
-    }
     addrow() {
     }
     editrow(val) {

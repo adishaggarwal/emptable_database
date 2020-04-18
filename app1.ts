@@ -66,10 +66,6 @@ create(data:any)
 
 }
 
-editrow(val:any)
-{
-
-}
 addrow()
 {
     

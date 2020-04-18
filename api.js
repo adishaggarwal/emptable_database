@@ -27,7 +27,7 @@ app.delete("/deleterow/:id", function (req, res) {
 });
 app.put("updateuser/:id", function (req, res) {
     let id = req.params.id;
-    client.query(`update users set firstname=$1,middlename=$2,lastname=$3,email=$4,phoneno=$5,role=$7,address=$6,customer_id=$8
+    client.query(`update users set firstname=$1,middlename=$2,lastname=$3,email=$4,phoneno=$5,address=$6,role=$7,customer_id=$8
   where empid=${id};`, [value.firstname, value.middlename, value.lastname, value.email, value.phoneno, value.address, value.role_name, value.customer_id]);
     res.send();
 });
