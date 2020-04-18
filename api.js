@@ -25,7 +25,7 @@ app.delete("/deleterow/:id", function (req, res) {
         res.send();
     });
 });
-app.put('updateuser/:id', function (req, res) {
+app.put('update/:id', function (req, res) {
     console.log("hello");
     let value = req.body;
     let id = req.params.id;

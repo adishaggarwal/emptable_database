@@ -254,7 +254,7 @@ editrow(val:any)
             }*/
             {
                 console.log(newemp);
-                fetch(`http://localhost:3000/updateuser/${fid}`,{
+                fetch(`http://localhost:3000/update/${fid}`,{
                     method:"put",
                     headers:{'Content-Type':'application/json'},
                     body:JSON.stringify(newemp)
