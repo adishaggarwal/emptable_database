@@ -112,7 +112,8 @@ class actions {
                 var xx6 = document.getElementById(b6).getElementsByTagName("input");
                 var xe6 = document.getElementById(b6).getElementsByTagName("td");
                 var xs6 = document.getElementById(b6).getElementsByTagName("select");
-                console.log(xs6);
+                console.log(xs6[0].value);
+                console.log(xs6[1].value);
                 var q6;
                 for (q6 = 0; q6 < xe6.length - 2; q6++) {
                     var index = xx6[q6];
