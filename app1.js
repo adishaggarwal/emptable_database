@@ -112,6 +112,7 @@ class actions {
                 var xx6 = document.getElementById(b6).getElementsByTagName("input");
                 var xe6 = document.getElementById(b6).getElementsByTagName("td");
                 var xs6 = document.getElementById(b6).getElementsByTagName("select");
+                console.log(xs6);
                 var q6;
                 for (q6 = 0; q6 < xe6.length - 2; q6++) {
                     var index = xx6[q6];
@@ -119,7 +120,6 @@ class actions {
                         let x;
                         x = xs6[0].value;
                         recordarr[q6] = x;
-                        console.log(xs6[0].value);
                     }
                     else if (q6 == 7) {
                         let x;
