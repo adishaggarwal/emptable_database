@@ -38,6 +38,7 @@ app.put("updateuser/:id", function(req,res){
     client.query(`update users set firstname=$1,middlename=$2,lastname=$3,email=$4,phoneno=$5,address=$6,role=$7,customer_id=$8
   where empid=${id};`,[value.firstname,value.middlename,value.lastname,value.email,value.phoneno,value.address,value.role_name,value.customer_id])
   res.send();
+  console.log("hello");
 });
 
 app.get('/getroles',function(req,res){
