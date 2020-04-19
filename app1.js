@@ -204,46 +204,46 @@ class actions {
                               }
                          });
                      }*/
-                    {
-                        console.log(newemp);
-                        fetch(`http://localhost:3000/update/${fid}`, {
-                            method: "put",
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(newemp)
-                        }).then(res => {
-                            console.log("ebkj0");
-                            let kalesh1 = document.getElementById("tbody").getElementsByTagName("button");
-                            for (let i = 1; i < kalesh1.length; i = i + 2) {
-                                let num2 = kalesh1[i].id;
-                                let b25 = "" + num2;
-                                let b35 = "" + num2 + "" + num2;
-                                var xx15 = document.getElementById("" + b25);
-                                var xx25 = document.getElementById("" + b35);
-                                if (b35 == "" + fid + "" + fid) {
-                                    xx25.innerHTML = "EDIT";
-                                    xx15.innerHTML = "DELETE";
-                                    let b = "row" + fid;
-                                    var xx5 = document.getElementById(b).getElementsByTagName("input");
-                                    var sel = document.getElementById(b).getElementsByTagName("td");
-                                    let sel6 = document.getElementById("selectroles" + fid);
-                                    let sel7 = document.getElementById("selectwebsites" + fid);
-                                    let text6 = sel6.options[sel6.selectedIndex].text;
-                                    let text7 = sel7.options[sel7.selectedIndex].text;
-                                    sel[6].innerHTML = `<input type="number" placeholder="${text6}" disabled>`;
-                                    sel[7].innerHTML = `<input type="number" placeholder="${text7}" disabled>`;
-                                    var q5;
-                                    for (q5 = 0; q5 < xx5.length; q5++) {
-                                        var index = xx5[q5];
-                                        index.disabled = true;
-                                    }
-                                }
-                                else {
-                                    xx15.style.display = "block";
-                                    xx25.style.display = "block";
+                    //  {
+                    console.log(newemp);
+                    fetch(`http://localhost:3000/update/${fid}`, {
+                        method: "put",
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(newemp)
+                    }).then(res => {
+                        console.log("ebkj0");
+                        let kalesh1 = document.getElementById("tbody").getElementsByTagName("button");
+                        for (let i = 1; i < kalesh1.length; i = i + 2) {
+                            let num2 = kalesh1[i].id;
+                            let b25 = "" + num2;
+                            let b35 = "" + num2 + "" + num2;
+                            var xx15 = document.getElementById("" + b25);
+                            var xx25 = document.getElementById("" + b35);
+                            if (b35 == "" + fid + "" + fid) {
+                                xx25.innerHTML = "EDIT";
+                                xx15.innerHTML = "DELETE";
+                                let b = "row" + fid;
+                                var xx5 = document.getElementById(b).getElementsByTagName("input");
+                                var sel = document.getElementById(b).getElementsByTagName("td");
+                                let sel6 = document.getElementById("selectroles" + fid);
+                                let sel7 = document.getElementById("selectwebsites" + fid);
+                                let text6 = sel6.options[sel6.selectedIndex].text;
+                                let text7 = sel7.options[sel7.selectedIndex].text;
+                                sel[6].innerHTML = `<input type="number" placeholder="${text6}" disabled>`;
+                                sel[7].innerHTML = `<input type="number" placeholder="${text7}" disabled>`;
+                                var q5;
+                                for (q5 = 0; q5 < xx5.length; q5++) {
+                                    var index = xx5[q5];
+                                    index.disabled = true;
                                 }
                             }
-                        });
-                    }
+                            else {
+                                xx15.style.display = "block";
+                                xx25.style.display = "block";
+                            }
+                        }
+                    });
+                    // }
                 }
             }
             else {

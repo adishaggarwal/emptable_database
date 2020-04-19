@@ -252,7 +252,7 @@ editrow(val:any)
                      }
                 });
             }*/
-            {
+          //  {
                 console.log(newemp);
                 fetch(`http://localhost:3000/update/${fid}`,{
                     method:"put",
@@ -305,7 +305,7 @@ editrow(val:any)
                         } 
                  }
             });
-            }
+           // }
            }
         }
         
