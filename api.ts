@@ -33,14 +33,12 @@ app.delete("/deleterow/:id",function(req,res){
     })
 });
 
-app.put('https://localhost:3000/updateuserdata/:id', function(req,res){
-    console.log("hello");
+app.put('/updateUser/:id', function(req,res){
     let value=req.body;
     let id=req.params.id;
     client.query(`update users set firstname=$1,middlename=$2,lastname=$3,email=$4,phoneno=$5,address=$6,customer_id=$7,role=$8
   where empid=${id};`,[value.firstname,value.middlename,value.lastname,value.email,value.phoneno,value.address,value.customer_id,value.role_name])
   res.send();
-  
 });
 
 app.get('/getroles',function(req,res){
@@ -54,3 +52,9 @@ app.get('/getroles',function(req,res){
     res.status(200).json(result.rows);
     })
   });
+
+  app.post('/addnewrow', function (req,res){
+      let value=req.body;
+      client.query(`insert into users (firstname,middlename,lastname,email,phoneno,address,customer_id,role,empid) values($1,$2,$3,$4,$5,$6,$7,$8,$9) returning empid;`,[value.firstname,value.middlename,value.lastname,value.email,value.phoneno,value.address,value.customer_id,value.role_name,value.empid])
+      .then((result:any)=>res.json(result.rows[0]));
+  })

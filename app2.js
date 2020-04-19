@@ -10,6 +10,19 @@ export class emp {
         this.role_name = role_name;
     }
 }
+export class emp2 {
+    constructor(firstname, middlename, lastname, email, phoneno, address, customer_id, role_name, empid) {
+        this.firstname = firstname;
+        this.middlename = middlename;
+        this.lastname = lastname;
+        this.email = email;
+        this.phoneno = phoneno;
+        this.address = address;
+        this.customer_id = customer_id;
+        this.role_name = role_name;
+        this.empid = empid;
+    }
+}
 export class fetchjsondata {
     async fetch() {
         let browserdata = await fetch("http://localhost:3000/fetchuserdata");

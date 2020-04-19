@@ -12,6 +12,7 @@ class actions implements imp.CRUD<imp.emp>
     delarray:string[];
     temp:any[];
     nrow:number;
+    newid:number;
 
 
 constructor()
@@ -66,10 +67,6 @@ create(data:any)
 
 }
 
-addrow()
-{
-    
-}
 
 editrow(val:any)
 {
@@ -77,57 +74,10 @@ editrow(val:any)
         var yo;
         var kid=1;
         var lol=7;
-        /*
-        if (val == "newsave" || val=="newcancel") {
-            let theid = document.getElementById("theid")!;
-            let theval = theid.value;
-            if(theval)
-            {
-                let therow = document.getElementById("newnew")!;
-                therow.id = "row" + theval;
-               
-                let thesave = document.getElementById("newsave")!;
-                thesave.id = "" + theval + "" + theval;
-
-                let thedelete = document.getElementById("newcancel")!;
-                thedelete.innerHTML = "DELETE";
-                thedelete.id = "" + theval;
-
-                fid = "" + theval;
-                yo = "" + theval + "" + theval;
-                lol=99;
-
-                let dnew = document.getElementById(""+fid)!;
-                dnew.onclick = () => {
-                    p1.deleterow(fid);
-                };
-                let pnew = document.getElementById(""+yo)!;
-                pnew.onclick = () => {
-                    p1.editrow(fid);
-                   };
-        }
-            else
-            {
-                let rowid = document.getElementById("newnew")!;
-                let theid = document.getElementById("theid")!;
-                let thesave = document.getElementById("newsave")!;
-                let thecancel = document.getElementById("newcancel")!;
-                theid.removeAttribute("id");
-                thesave.removeAttribute("id");
-                thecancel.removeAttribute("id");
-                rowid.id="fake";
-                document.getElementById("fake")!.remove();
-                fid = "nosorry";
-                kid = 99;
-                p1.nrow=1;
-            }
-           
-        }
-        */
-       {
+        
             fid= ""+val
             yo=""+val+""+val;
-       }
+       
       
        if(kid==1)
        {
@@ -141,8 +91,12 @@ editrow(val:any)
     
             var xx6= document.getElementById(b6)!.getElementsByTagName("input")!;
             var xe6= document.getElementById(b6)!.getElementsByTagName("td")!;
-            var xs61= document.getElementById("selectroles"+fid)!;
-            var xs62= document.getElementById("selectwebsites"+fid)!;
+            //var xs61= document.getElementById("selectroles"+fid)!;
+            //var xs62= document.getElementById("selectwebsites"+fid)!;
+            let sel6=document.getElementById("selectroles"+fid)!;
+            let sel7=document.getElementById("selectwebsites"+fid)!;
+            let text6 = sel6!.options[sel6!.selectedIndex].value;
+            let text7 = sel7!.options[sel7!.selectedIndex].value;
 
             
             var q6;
@@ -152,13 +106,13 @@ editrow(val:any)
                 if(q6==6)
                 {
                     let x:any;
-                    x = xs62[0].value;
+                    x = text7;
                     recordarr[q6]=x;
                 }
                 else if(q6==7)
                 {
                     let x:any;
-                    x = xs61[0].value;
+                    x = text6;
                     recordarr[q6]=x;
                     
                 }
@@ -198,7 +152,6 @@ editrow(val:any)
            {
             let newemp= new imp.emp(recordarr[0],recordarr[1],recordarr[2],recordarr[3],recordarr[4],recordarr[5],recordarr[6],recordarr[7]);
            let alerts= document.getElementsByClassName("alertspan")!;
-           console.log(newemp);
            for(let i=0;i<alerts.length;i++)
            {
                alerts[i].style.display="none";
@@ -254,15 +207,11 @@ editrow(val:any)
             }*/
           //  {
                 console.log(newemp);
-                fetch(`http://localhost:3000/updateuserdata/${fid}`,{
-                    method:"put",
-                    headers:{'Content-Type':'application/json',
-                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Headers':'Origin, X-Requested-With, Content-Type, Accept, Authorization'},
-                    body:JSON.stringify(newemp)
-            }).then(res=>{
-                console.log("ebkj0");
+                fetch(`http://localhost:3000/updateUser/${fid}`, {
+                    method: "put",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newemp)
+                }).then(res => {
                 let kalesh1=document.getElementById("tbody")!.getElementsByTagName("button")!;
     
                 for(let i=1;i<kalesh1.length;i=i+2)
@@ -289,8 +238,8 @@ editrow(val:any)
                                 let text6 = sel6!.options[sel6!.selectedIndex].text;
                                 let text7 = sel7!.options[sel7!.selectedIndex].text;
 
-                                sel[6].innerHTML=`<input type="number" placeholder="${text6}" disabled>`;
-                                sel[7].innerHTML=`<input type="number" placeholder="${text7}" disabled>`;
+                                sel[6].innerHTML=`<input type="number" placeholder="${text7}" disabled>`;
+                                sel[7].innerHTML=`<input type="number" placeholder="${text6}" disabled>`;
 
                                 
     
@@ -422,30 +371,8 @@ deleterow(val:any)
 {
     var num:any;
         var kya=1;
-
-    /*   if(val=="newcancel")
-       {
-           if(document.getElementById("theid")!.value){
-        let theid = document.getElementById("theid")!;
-            let theval = theid.value;
-            let therow = document.getElementById("newnew")!;
-            therow.id="row" + theval;
-            let thesave = document.getElementById("newsave")!;
-            thesave.innerHTML = "EDIT";
-            thesave.id="" + theval + "" + theval;
-            let thedelete = document.getElementById("newcancel")!;
-            thedelete.innerHTML = "DELETE";
-            thedelete.id="" + theval;
-            num = "" + theval;
-           }
-           else{
-               p1.editrow("newcancel");
-               kya=99;
-           }
-       }*/
-        {
             num=""+val;
-        }
+        
         if(kya==1)
         {
             if((document.getElementById(""+num)!.innerHTML=="DELETE" ))
@@ -459,9 +386,10 @@ deleterow(val:any)
                         thedel.removeAttribute("id");
                         rowid.id="fake";
                         document.getElementById("fake")!.remove();
+                        console.log(num);
                     });
             }
-            /*
+            
                 else
                 {    
                     let h2= "row"+ num;
@@ -475,8 +403,8 @@ deleterow(val:any)
                                 <td><input type="text" placeholder="${p1.temp[2]}" disabled></td>
                                 <td><input type="email" placeholder="${p1.temp[3]}" disabled></td>
                                 <td><input type="number" placeholder="${p1.temp[4]}" disabled></td>
-                                <td><input type="number" placeholder="${p1.temp[5]}" disabled></td>
-                                <td><input type="text" placeholder="${p1.temp[6]}" disabled></td>
+                                <td><input type="text" placeholder="${p1.temp[5]}" disabled></td>
+                                <td><input type="number" placeholder="${p1.temp[6]}" disabled></td>
                                 <td><input type="number" placeholder="${p1.temp[7]}" disabled></td>
                                 <td><button id="${nh1}${nh1}" class="btn btn-primary">EDIT</button></td>
                                 <td><button id="${nh1}" class="btn btn-danger">DELETE</button></td>`;
@@ -485,12 +413,12 @@ deleterow(val:any)
                                 let r=""+ num + "" + num;
                                 let de = document.getElementById(""+nh1)!;
                                 de!.onclick = () => {
-                                    this.deleterow(p1.temp[6]);
+                                    this.deleterow(num);
                                   }
                          
                          let pe = document.getElementById(r)!;
                          pe!.onclick = () => {
-                            this.editrow(this.temp[6]);
+                            this.editrow(num);
                           }    
                     let kalesh3=document.getElementById("tbody")!.getElementsByTagName("button")!;
         
@@ -505,50 +433,110 @@ deleterow(val:any)
                             xx25.style.display="block";
                     }
                 }
-                */
+                
         }
    
        
 }
 
-/*
+
 async addrow()
 {
-    alert("Remember to fill a unique ID, else it will not work properly.");
+   await fetchdata.fetch().then(data => {
+        var len=data.length;
+        let ind=data[len-1].empid+1;
+         p1.newid=ind;
+    }
+        );
+            console.log(p1.newid);
          let kalesh=await document.getElementById("tbody")!.getElementsByTagName("button")!;
         let thebody= document.getElementById("tbody")!;
         p1.nrow=0;
+        let newemp = new imp.emp2("","","","dummy@gmail.com",9999999999,"",1,1,p1.newid);
 
         let newlen=kalesh.length;
+        fetch(`http://localhost:3000/addnewrow`,{
+            method: "POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify(newemp)}
+            ).then((res)=>res.json())
+            .then(res=>{
 
         let newrow= thebody.insertRow(-1);
-        newrow.setAttribute("id","newnew");
+        newrow.setAttribute("id","row"+p1.newid);
        newrow.innerHTML=`
-       <td><input type="text" placeholder=""></td>
-       <td><input type="text" placeholder=""></td>
-       <td><input type="text" placeholder=""></td>
-       <td><input type="email" placeholder="" ></td>
+       <td><input type="text" placeholder="firstname"></td>
+       <td><input type="text" placeholder="middlename"></td>
+       <td><input type="text" placeholder="lastname"></td>
+       <td><input type="email" placeholder="email"></td>
        <td><input type="number" placeholder=""></td>
-       <td><input type="text" placeholder=""></td>
-       <td><input type="number" placeholder="" id="theid"></td>
-       <td><select class="form-control">
-       <option value="0">DEVELOPER</option>
-       <option value="1">QA</option>
-       <option value="2">DEVOPS</option>
-     </select></td>
-       <td><button class="btn btn-primary" id="newsave">SAVE</button></td>
-      <td><button class="btn btn-danger" id="newcancel">CANCEL</button></td>`;
+       <td><input type="text" placeholder="address"></td>`;
 
-            let dnew = document.getElementById("newcancel")!;
-            dnew!.onclick = () => {
-                p1.deleterow("newcancel");
-              }
-          
+       newrow.innerHTML +=` <td><select id="selectwebsites${p1.newid}" class="form-control">
+       </select></td>
+         `;
+         newrow.innerHTML +=`<td><select id="selectroles${p1.newid}" class="form-control">
+              </select></td>
+                `;
+
+      
+       
+        websitesrow.fetchwebsites().then (data =>{
+           
+            let select=document.getElementById("selectwebsites"+p1.newid);
+            for(let i=0;i<data.length;i++)
+            {
+                let opt=data[i];
+                let optelement=document.createElement("option");
+                optelement.textContent=opt.website;
+                let str=""+opt.customer_id;
+                optelement.value=str;
+                select!.appendChild(optelement);
+            }
+        
+        });
+    
+        
+            rolesrow.fetchroles().then(data =>{
+                
+                let select=document.getElementById("selectroles"+p1.newid);
+                for(let i=0;i<data.length;i++)
+                {
+                    let opt=data[i];
+                    let optelement=document.createElement("option");
+                    optelement.textContent=opt.role_name;
+                    let str=""+opt.role_key;
+                    optelement.value=str;
+                    select!.appendChild(optelement);
+                }
             
-            let pnew = document.getElementById("newsave")!;
-            pnew!.onclick = () => {
-                p1.editrow("newsave");
-              }
+            });
+
+            
+       
+
+      
+      
+        newrow.innerHTML +=`<td><button class="btn btn-primary" id="${p1.newid}${p1.newid}">SAVE</button></td>
+        <td><button class="btn btn-danger" id="${p1.newid}">DELETE</button></td>`;
+
+        let dnew = document.getElementById(""+p1.newid)!;
+        dnew!.onclick = () => {
+            p1.deleterow(p1.newid);
+          }
+      
+        
+        let pnew = document.getElementById(""+p1.newid+""+p1.newid)!;
+        pnew!.onclick = () => {
+            p1.editrow(p1.newid);
+          }
+      
+
+       
+
+       
+
+          
 
             for(let i=1;i<newlen;i=i+2)
             { 
@@ -568,9 +556,10 @@ async addrow()
              }
             
 
-}
-*/
 
+});
+
+}
 }
   
 let p1=new actions();

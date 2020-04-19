@@ -31,6 +31,34 @@ export class emp
   }
 }
 
+export class emp2
+{
+    firstname: string;
+  middlename: string;
+  lastname: string;
+  email: string;
+  phoneno: any;
+  role: number;
+  address: string;
+  customer_id:number;
+  role_name:number;
+  empid:number;
+  
+
+  constructor(firstname:string,middlename:string,lastname:string,email:string,phoneno:number,address:string,customer_id:number,role_name:number,empid:number)
+  {
+    this.firstname = firstname;
+    this.middlename = middlename;
+    this.lastname = lastname;
+    this.email= email;
+    this.phoneno=phoneno;
+    this.address = address;
+    this.customer_id=customer_id;
+    this.role_name= role_name;
+    this.empid=empid;
+  }
+}
+
 export class fetchjsondata{
     async fetch()
     {
