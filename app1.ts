@@ -257,7 +257,9 @@ editrow(val:any)
                 fetch(`http://localhost:3000/update/${fid}`,{
                     method:"put",
                     headers:{'Content-Type':'application/json',
-                    "Access-Control-Allow-Origin": "*"},
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "PUT",
+                    "Access-Control-Allow-Headers":" Origin, X-Requested-With, Content-Type, Accept, Authorization"},
                     body:JSON.stringify(newemp)
             }).then(res=>{
                 console.log("ebkj0");
