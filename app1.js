@@ -206,12 +206,12 @@ class actions {
                      }*/
                     //  {
                     console.log(newemp);
-                    fetch(`http://localhost:3000/update/${fid}`, {
+                    fetch(`http://localhost:3000/updateuserdata/${fid}`, {
                         method: "put",
                         headers: { 'Content-Type': 'application/json',
-                            "Access-Control-Allow-Origin": "*",
-                            "Access-Control-Allow-Methods": "PUT",
-                            "Access-Control-Allow-Headers": " Origin, X-Requested-With, Content-Type, Accept, Authorization" },
+                            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+                            'Access-Control-Allow-Origin': '*',
+                            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization' },
                         body: JSON.stringify(newemp)
                     }).then(res => {
                         console.log("ebkj0");
