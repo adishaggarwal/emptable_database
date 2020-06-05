@@ -8,6 +8,9 @@ Postgres is used to store the data(locally).
 # TECHNOLOGIES USED
 HTML,CSS,Bootstrap,Typescript,Javascript,Postegresql
 
+# AUTHOR
+Adish Aggarwal
+
 # SCREENSHOTS
 
 ![](images/1.JPG)
